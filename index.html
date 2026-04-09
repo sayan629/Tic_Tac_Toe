@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TIC TAC TOE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="scanlines"></div>
+  <div class="bg-grid"></div>
+
+  <div class="container">
+
+    <header>
+      <h1 class="title">TIC<span class="accent">_</span>TAC<span class="accent">_</span>TOE</h1>
+      <p class="subtitle">ARCADE EDITION</p>
+    </header>
+
+    <!-- Score Board -->
+    <div class="scoreboard">
+      <div class="score-card" id="score-x">
+        <div class="score-symbol x-symbol">✕</div>
+        <div class="score-label">PLAYER X</div>
+        <div class="score-value" id="x-score">0</div>
+      </div>
+      <div class="score-divider">
+        <div class="vs-text">VS</div>
+        <div class="draw-label">DRAWS</div>
+        <div class="score-value" id="draw-score">0</div>
+      </div>
+      <div class="score-card" id="score-o">
+        <div class="score-symbol o-symbol">○</div>
+        <div class="score-label">PLAYER O</div>
+        <div class="score-value" id="o-score">0</div>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="status-bar">
+      <span class="status-indicator"></span>
+      <span id="status-text">PLAYER X — YOUR MOVE</span>
+    </div>
+
+    <!-- Board -->
+    <div class="board" id="board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+      <!-- Win line overlay -->
+      <svg class="win-line-svg" id="win-line-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <line id="win-line" x1="0" y1="0" x2="0" y2="0" />
+      </svg>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="btn btn-primary" id="restart-btn">↺ NEW GAME</button>
+      <button class="btn btn-secondary" id="reset-score-btn">⊘ RESET SCORE</button>
+    </div>
+
+    <!-- Mode Toggle -->
+    <div class="mode-toggle">
+      <span class="mode-label">MODE:</span>
+      <button class="mode-btn active" id="pvp-btn">2 PLAYERS</button>
+      <button class="mode-btn" id="pvc-btn">VS CPU</button>
+    </div>
+
+  </div>
+
+  <!-- Win Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <div class="modal-symbol" id="modal-symbol"></div>
+      <div class="modal-title" id="modal-title">PLAYER X WINS!</div>
+      <div class="modal-sub">GAME OVER</div>
+      <button class="btn btn-primary" id="modal-play-again">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
